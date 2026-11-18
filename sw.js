@@ -1,5 +1,5 @@
-const CACHE='food-diary-shell-v11';
-const CORE=['./','./index.html','./styles.css?v=11','./app.js?v=11','./food-location.ttf','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE='food-diary-shell-v12';
+const CORE=['./','./index.html','./styles.css?v=12','./app.js?v=12','./food-location.ttf','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',event=>{
